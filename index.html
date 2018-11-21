@@ -5,8 +5,7 @@
   <title>PUXL framework: Build the accessible Web. Save energy.</title>
 	<meta name="description" content="PUXL is an open-source and eco-friendly library to create front-end Web interfaces. It helps you build accessible and responsive sites with lightweight HTML.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--  <link rel="stylesheet" href="https://puxl.io/css/puxl.min.css">-->
-  <link rel="stylesheet" href="../puxl-framework/css/puxl.css">
+  <link rel="stylesheet" href="https://puxl.io/css/puxl.min.css">
   <style>
       #main__content header a:first-of-type {
         margin-bottom:    1em;
@@ -20,19 +19,19 @@
 
       @media (min-width: 768px) {
         #features article {
-          height:    18em;
+          height:    20em;
         }
       }
 
       @media (min-width: 992px) {
         #features article {
-          height:    16em;
+          height:    18em;
         }
       }
 
       @media (min-width: 1200px) {
         #features article {
-          height:    14em;
+          height:    16em;
         }
       }
   </style>
@@ -42,9 +41,9 @@
   <a class="jump-link" href="#main__content">Jump to main content</a>
 
 
-  <header id="app-bar" class="app bar top" role="banner">
+  <div id="app-bar" class="app bar top">
 
-    <div class="headline">
+    <header>
 
       <a class="home" href="https://puxl.io/">
         <img alt="" src="https://puxl.io/img/logo/puxl.svg">
@@ -62,7 +61,7 @@
         <span>Open navigation menu</span>
       </button>
 
-    </div>
+    </header>
 
     <nav role="navigation">
 
@@ -95,14 +94,14 @@
 
     </nav>
 
-  </header>
+  </div>
 
 
   <main id="main__content" role="main">
 
     <div class="grid">
 
-      <header class="col-xs-12 col-md-8 col-lg-7">
+      <header class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 
         <h1>PUXL <small>(ˈpʌksl)</small>
         <br>
@@ -119,7 +118,7 @@
           <li>Simple and short class names to build Webs intuitively and with less HTML and <em>divitis</em>.</li>
         </ul>
 
-        <a class="btn-icn-txt ghost primary md block" href="docs/v1-beta/index.html" role="button">
+        <a class="btn-icn-txt ghost primary md block" href="https://puxl.io/docs/v1-beta" role="button">
           <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M19,0H5v32h22V8L19,0z M19,1.414L25.586,8H19V1.414z M26,31H6V1h12v7c0,0.552,0.447,1,1,1h7V31z"/>
           </svg>
@@ -138,56 +137,77 @@
 
     </div>
 
-    <section id="features" class="grid card" aria-labelledby="features--heading">
+    <section id="features" class="grid" aria-labelledby="features--heading">
 
       <h3 id="features--heading" class="col-xs-12 text--center">Features</h3>
 
-      <article id="prevention" class="col-xs-12 col-md-6" aria-labelledby="prevention--heading">
-        <h4 id="prevention--heading">Accessibility prevention</h4>
-
-        <p>As you build your interfaces, it guides you and prevents common accessibility errors. It is fully customizable (including the appearance of <code>select</code> and <code>checkbox</code>) and perfect for heavily loaded HTML sites.
-        <br>PUXL detects accessibility errors automatically and shows them in the browser, describing the error and providing a solution in a copy-paste-solve way.</p>
+      <article id="prevention" class="col-xs-12 col-md-6 card" aria-labelledby="prevention--heading">
+        <header>
+          <h4 class="heading" id="prevention--heading">Accessibility prevention</h4>
+        </header>
+        <div class="content">
+          <p>As you build your interfaces, it guides you and prevents common accessibility errors. It is fully customizable (including the appearance of <code>select</code> and <code>checkbox</code>) and perfect for heavily loaded HTML sites.
+          <br>PUXL detects accessibility errors automatically and shows them in the browser, describing the error and providing a solution in a copy-paste-solve way.</p>
+        </div>
       </article>
 
-      <article id="color" class="col-xs-12 col-md-6" aria-labelledby="color--heading">
-        <h4 id="color--heading">Automatic color contrast</h4>
-
-        <p>Load the colors you want in the palette, compile and let PUXL handle the heavy work in colors for buttons, backgrounds, text, borders... all over your site.
-        <br>Achieving an accessible color contrast will no longer be a problem thanks to the integrated color algorithms.</p>
+      <article id="color" class="col-xs-12 col-md-6 card" aria-labelledby="color--heading">
+        <header>
+          <h4 class="heading" id="color--heading">Automatic color contrast</h4>
+        </header>
+        <div class="content">
+          <p>Load the colors you want in the palette, compile and let PUXL handle the heavy work in colors for buttons, backgrounds, text, borders... all over your site.
+          <br>Achieving an accessible color contrast will no longer be a problem thanks to the integrated color algorithms.</p>
+        </div>
       </article>
 
-      <article id="easy" class="col-xs-12 col-md-6" aria-labelledby="easy--heading">
-        <h4 id="easy--heading">Easy to use</h4>
-
-        <p>Class names use industry conventions so you can start using PUXL in no time. We have detached ourselves from the names of long classes and unnecessarily nested nodes that overpopulate HTML.
-        <br>A simple and semantic structure improves search engine indexing and makes your SEO easier.</p>
+      <article id="easy" class="col-xs-12 col-md-6 card" aria-labelledby="easy--heading">
+        <header>
+          <h4 class="heading" id="easy--heading">Easy to use</h4>
+        </header>
+        <div class="content">
+          <p>Class names use industry conventions so you can start using PUXL in no time. We have detached ourselves from the names of long classes and unnecessarily nested nodes that overpopulate HTML.
+          <br>A simple and semantic structure improves search engine indexing and makes your SEO easier.</p>
+        </div>
       </article>
 
-      <article id="minimum" class="col-xs-12 col-md-6" aria-labelledby="minimum--heading">
-        <h4 id="minimum--heading">Minimum</h4>
-
-        <p>PUXL elements are written with the minimum necessary code. Compounds that use JavaScript do not require external libraries to function.
-        <br>You can compress your styles and SVG icons in a single CSS stylesheet, and avoid having to load an entire font.</p>
+      <article id="minimum" class="col-xs-12 col-md-6 card" aria-labelledby="minimum--heading">
+        <header>
+          <h4 class="heading" id="minimum--heading">Minimum</h4>
+        </header>
+        <div class="content">
+          <p>PUXL elements are written with the minimum necessary code. Compounds that use JavaScript do not require external libraries to function.
+          <br>You can compress your styles and SVG icons in a single CSS stylesheet, and avoid having to load an entire font.</p>
+        </div>
       </article>
 
-      <article id="energy" class="col-xs-12 col-md-6" aria-labelledby="energy--heading">
-        <h4 id="energy--heading">Save energy</h4>
-
-        <p>The less code your sites have, the lower the load for your servers and the lower their consumption. People can also navigate using less data.
-        <br>Reduce the cost of data and electricity bills for the pocket and our Mother Earth.</p>
+      <article id="energy" class="col-xs-12 col-md-6 card" aria-labelledby="energy--heading">
+        <header>
+          <h4 class="heading" id="energy--heading">Save energy</h4>
+        </header>
+        <div class="content">
+          <p>The less code your sites have, the lower the load for your servers and the lower their consumption. People can also navigate using less data.
+          <br>Reduce the cost of data and electricity bills for the pocket and our Mother Earth.</p>
+        </div>
       </article>
 
-      <article id="technology" class="col-xs-12 col-md-6" aria-labelledby="technology--heading">
-        <h4 id="technology--heading">The latest Web technologies</h4>
-
-        <p>Dynamic layouts with calc(), CSS custom properties (or CSS variables, they get along really well with JavaScript!), flexbox, grid, animation and many others have come to stay.
-        <br>We also wanted to include support for ltr/rtl and <a href="https://puxl.io/puxl-icons/">PUXL icons</a>. We could not leave them out of the party.</p>
+      <article id="technology" class="col-xs-12 col-md-6 card" aria-labelledby="technology--heading">
+        <header>
+          <h4 class="heading" id="technology--heading">The latest Web technologies</h4>
+        </header>
+        <div class="content">
+          <p>Dynamic layouts with calc(), CSS custom properties (or CSS variables, they get along really well with JavaScript!), flexbox, grid, animation and many others have come to stay.
+          <br>We also wanted to include support for ltr/rtl and <a href="https://puxl.io/puxl-icons/">PUXL icons</a>. We could not leave them out of the party.</p>
+        </div>
       </article>
 
-      <article id="modular" class="col-xs-12 col-md-6 col-md-offset-3" aria-labelledby="modular--heading">
-        <h4 id="modular--heading">Modular and extensible</h4>
-
-        <p>PUXL is written in SASS and pure JavaScript. Its modular architecture allows you to select just the code you need for your Webs, and not one more byte. Choose which elements and compounds to load with <code>_setup.scss</code> for your next project or create your own extensions.</p>
+      <article id="modular" class="col-xs-12 col-md-6 col-md-offset-3 card" aria-labelledby="modular--heading">
+        <header>
+          <h4 class="heading" id="modular--heading">Modular and extensible</h4>
+        </header>
+        <div class="content">
+          <p>PUXL is written in SASS and pure JavaScript. Its modular architecture allows you to select just the code you need for your Webs, and not one more byte. Choose which elements and compounds to load with <code>_setup.scss</code> for your next project or create your own extensions.</p>
+        </div>
       </article>
 
       <div class="col-xs-12 text--center">
@@ -203,36 +223,36 @@
 
     </section>
 
-    <section id="soon" class="grid">
+    <section id="soon" class="grid" aria-labelledby="soon--heading">
 
-      <h3 class="col-xs-12">Pronto...</h3>
+      <h3 id="soon--heading" class="col-xs-12">Soon...</h3>
 
-      <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+      <article id="training" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0" aria-labelledby="training--heading">
         <img class="circle" alt="" src="img/page__home/puxl-home__features--training.png">
-        <h4>Formación</h4>
-        <p>Te ayudamos a construir tu carrera, a reducir el tiempo de desarrollo y a aportar más valor a tus desarrollos web. Con nuestro plan de formación práctico basado en el uso de PUXL, serás capaz de desarrollar interfaces accesibles en muy poco tiempo.</p>
+        <h4 id="training--heading">Training</h4>
+        <p>We help you build your career, reduce development time and add more value to your Web developments. With our practical training plan, based on the use of PUXL, we can offer accessible interfaces in a very short time.</p>
         <div class="text--center">
-          <a class="btn solid primary md" href="https://puxl.io/formacion/" role="button">Saber más...</a>
+          <a class="btn solid primary md" href="https://puxl.io/formacion/" role="button">Ask for a training</a>
         </div>
       </article>
 
-      <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+      <article id="support" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0" aria-labelledby="support--heading">
         <img class="circle" alt="" src="img/page__home/puxl-home__features--support.png">
-        <h4>Soporte</h4>
-        <p>Te proporcionamos acceso a nuestros expertos y a servicios de apoyo, que te ayudarán a crear las interfaces de cualquier proyecto web.
+        <h4 id="support--heading">Support</h4>
+        <p>We provide you access to our experts and support services, which will help you create the interfaces of any Web project.
         <br>
-        Nuestro enfoque es abierto y colaborativo. Te da acceso directo a nuestros especialistas, a las últimas actualizaciones sobre el producto y asesoramiento sobre las prácticas más recomendadas.</p>
+        Our approach is open and collaborative. It gives you direct access to our specialists, to the latest updates on the product and advice on the most recommended practices.</p>
         <div class="text--center">
-          <a class="btn solid primary md" href="https://puxl.io/soporte/" role="button">Saber más...</a>
+          <a class="btn solid primary md" href="https://puxl.io/soporte/" role="button">Know more...</a>
         </div>
       </article>
 
-      <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+      <article id="themes" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0" aria-labelledby="themes--heading">
         <img class="circle" alt="" src="img/page__home/puxl-home__features--themes.png">
-        <h4>Temas</h4>
-        <p>Nuestros temas están diseñados como una extensión de PUXL, y creados para necesidades específicas. Esto significa que PUXL se adapta a tu proyecto, agregando componentes, utilidades y complementos completamente nuevos.</p>
+        <h4 id="themes--heading">Themes</h4>
+        <p>Our themes are designed as an extension of PUXL, and created for specific needs. This means that PUXL adapts to your project, adding completely new components, utilities and complements.</p>
         <div class="text--center">
-          <a class="btn solid primary md" href="https://puxl.io/temas/" role="button">Saber más...</a>
+          <a class="btn solid primary md" href="https://puxl.io/temas/" role="button">About themes</a>
         </div>
       </article>
 
@@ -295,8 +315,7 @@
   </footer>
 
 
-<!--  <script src="http://puxl.io/js/puxl-js/appBar.js"></script>-->
-  <script src="../puxl-framework/js/puxl-js/appBar.js"></script>
+  <script src="https://puxl.io/js/puxl-js/appBar.js"></script>
   <script>
     (function() {
       'use strict';
