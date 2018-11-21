@@ -1,0 +1,331 @@
+<!doctype html>
+<html class="no-js" dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PUXL framework: Build the accessible Web. Save energy.</title>
+	<meta name="description" content="PUXL is an open-source and eco-friendly library to create front-end Web interfaces. It helps you build accessible and responsive sites with lightweight HTML.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  <link rel="stylesheet" href="https://puxl.io/css/puxl.min.css">-->
+  <link rel="stylesheet" href="../puxl-framework/css/puxl.css">
+  <style>
+      #main__content header a:first-of-type {
+        margin-bottom:    1em;
+      }
+
+      #features {
+        margin-top:       2em;
+        margin-bottom:    2em;
+        padding:          1em;
+      }
+
+      @media (min-width: 768px) {
+        #features article {
+          height:    18em;
+        }
+      }
+
+      @media (min-width: 992px) {
+        #features article {
+          height:    16em;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        #features article {
+          height:    14em;
+        }
+      }
+  </style>
+</head>
+<body id="page__home" class="app-bar--top">
+
+  <a class="jump-link" href="#main__content">Jump to main content</a>
+
+
+  <header id="app-bar" class="app bar top" role="banner">
+
+    <div class="headline">
+
+      <a class="home" href="https://puxl.io/">
+        <img alt="" src="https://puxl.io/img/logo/puxl.svg">
+        <span>PUXL</span>
+      </a>
+
+      <button
+        id="app-bar__toggler"
+        class="bar-btn-icn toggler mobile--down space--before"
+        aria-haspopup="true"
+        aria-controls="app-bar__menu"
+        aria-expanded="true"
+        type="button">
+        <img alt="" src="https://puxl.io/img/puxl-icons/menu-burger.svg" aria-hidden="true">
+        <span>Open navigation menu</span>
+      </button>
+
+    </div>
+
+    <nav role="navigation">
+
+      <div id="app-bar__menu" class="subheading" aria-hidden="false">
+
+        <ul class="space--after">
+          <li>
+            <a href="https://puxl.io/docs/v1-beta/">
+              Docs (v1-beta)
+            </a>
+          </li>
+          <li>
+            <a href="https://puxl.io/puxl-icons/">
+              PUXL icons
+            </a>
+          </li>
+        </ul>
+
+        <a class="bar-btn-icn" href="https://github.com/puxl/puxl-framework" role="button">
+          <img alt="" src="https://puxl.io/img/logo/github.svg" aria-hidden="true">
+          <span>PUXL framework repository on GitHub</span>
+        </a>
+
+        <a class="bar-btn-icn" href="https://t.me/joinchat/AoC6ohKwoJDMIiqe_e01cA" role="button">
+          <img alt="" src="https://puxl.io/img/logo/telegram.svg" aria-hidden="true">
+          <span>PUXL channel on Telegram</span>
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <main id="main__content" role="main">
+
+    <div class="grid">
+
+      <header class="col-xs-12 col-md-8 col-lg-7">
+
+        <h1>PUXL <small>(ˈpʌksl)</small>
+        <br>
+        Build the accessible Web.
+        <br>
+        Save energy.</h1>
+
+        <p>PUXL is an open-source and eco-friendly library to create front-end Web interfaces.
+        <br>It helps you build accessible and responsive sites with lightweight HTML.</p>
+
+        <ul>
+          <li>Live accessibility errors detection: mark the elements that fail and include the solution ready to copy, paste and solve.</li>
+          <li>Automatically calculates the perfect color tone that passes the accessible contrast tests.</li>
+          <li>Simple and short class names to build Webs intuitively and with less HTML and <em>divitis</em>.</li>
+        </ul>
+
+        <a class="btn-icn-txt ghost primary md block" href="docs/v1-beta/index.html" role="button">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19,0H5v32h22V8L19,0z M19,1.414L25.586,8H19V1.414z M26,31H6V1h12v7c0,0.552,0.447,1,1,1h7V31z"/>
+          </svg>
+          <span>Documentation</span>
+        </a>
+
+        <a class="btn-icn-txt ghost secondary md block" href="https://github.com/puxl/puxl-framework" role="button">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M15.292,31.707c0.391,0.391,1.024,0.391,1.415,0l6-6c0.391-0.391,0.391-1.023,0-1.414c-0.392-0.391-1.023-0.391-1.414,0L17,28.586V22c0-0.553-0.447-1-1-1c-0.552,0-1,0.447-1,1v6.586l-4.293-4.293c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414L15.292,31.707z"/>
+            <path d="M25,6l-0.25,0.006C23.863,2.552,20.73,0,17,0c-4.14,0-7.548,3.146-7.959,7.182C8.71,7.064,8.362,7,8,7c-1.657,0-3,1.343-3,3c-2.762,0-5,2.238-5,5c0,2.762,2.238,5,5,5h20c3.867,0,7-3.133,7-7C32,9.136,28.867,6,25,6z M25,19H5c-2.206,0-4-1.794-4-4s1.794-4,4-4c0.552,0,1-0.448,1-1c0-1.103,0.897-2,2-2c0.236,0,0.474,0.042,0.708,0.125c0.108,0.038,0.221,0.057,0.333,0.057c0.187,0,0.373-0.053,0.535-0.155c0.259-0.164,0.429-0.438,0.46-0.744C10.4,3.701,13.395,1,17,1c3.199,0,5.988,2.161,6.781,5.254c0.113,0.442,0.512,0.751,0.969,0.751L25,7c3.314,0,6,2.688,6,6C31,16.314,28.314,19,25,19z"/>
+          </svg>
+          <span>Download v1-beta</span>
+        </a>
+
+      </header>
+
+    </div>
+
+    <section id="features" class="grid card" aria-labelledby="features--heading">
+
+      <h3 id="features--heading" class="col-xs-12 text--center">Features</h3>
+
+      <article id="prevention" class="col-xs-12 col-md-6" aria-labelledby="prevention--heading">
+        <h4 id="prevention--heading">Accessibility prevention</h4>
+
+        <p>As you build your interfaces, it guides you and prevents common accessibility errors. It is fully customizable (including the appearance of <code>select</code> and <code>checkbox</code>) and perfect for heavily loaded HTML sites.
+        <br>PUXL detects accessibility errors automatically and shows them in the browser, describing the error and providing a solution in a copy-paste-solve way.</p>
+      </article>
+
+      <article id="color" class="col-xs-12 col-md-6" aria-labelledby="color--heading">
+        <h4 id="color--heading">Automatic color contrast</h4>
+
+        <p>Load the colors you want in the palette, compile and let PUXL handle the heavy work in colors for buttons, backgrounds, text, borders... all over your site.
+        <br>Achieving an accessible color contrast will no longer be a problem thanks to the integrated color algorithms.</p>
+      </article>
+
+      <article id="easy" class="col-xs-12 col-md-6" aria-labelledby="easy--heading">
+        <h4 id="easy--heading">Easy to use</h4>
+
+        <p>Class names use industry conventions so you can start using PUXL in no time. We have detached ourselves from the names of long classes and unnecessarily nested nodes that overpopulate HTML.
+        <br>A simple and semantic structure improves search engine indexing and makes your SEO easier.</p>
+      </article>
+
+      <article id="minimum" class="col-xs-12 col-md-6" aria-labelledby="minimum--heading">
+        <h4 id="minimum--heading">Minimum</h4>
+
+        <p>PUXL elements are written with the minimum necessary code. Compounds that use JavaScript do not require external libraries to function.
+        <br>You can compress your styles and SVG icons in a single CSS stylesheet, and avoid having to load an entire font.</p>
+      </article>
+
+      <article id="energy" class="col-xs-12 col-md-6" aria-labelledby="energy--heading">
+        <h4 id="energy--heading">Save energy</h4>
+
+        <p>The less code your sites have, the lower the load for your servers and the lower their consumption. People can also navigate using less data.
+        <br>Reduce the cost of data and electricity bills for the pocket and our Mother Earth.</p>
+      </article>
+
+      <article id="technology" class="col-xs-12 col-md-6" aria-labelledby="technology--heading">
+        <h4 id="technology--heading">The latest Web technologies</h4>
+
+        <p>Dynamic layouts with calc(), CSS custom properties (or CSS variables, they get along really well with JavaScript!), flexbox, grid, animation and many others have come to stay.
+        <br>We also wanted to include support for ltr/rtl and <a href="https://puxl.io/puxl-icons/">PUXL icons</a>. We could not leave them out of the party.</p>
+      </article>
+
+      <article id="modular" class="col-xs-12 col-md-6 col-md-offset-3" aria-labelledby="modular--heading">
+        <h4 id="modular--heading">Modular and extensible</h4>
+
+        <p>PUXL is written in SASS and pure JavaScript. Its modular architecture allows you to select just the code you need for your Webs, and not one more byte. Choose which elements and compounds to load with <code>_setup.scss</code> for your next project or create your own extensions.</p>
+      </article>
+
+      <div class="col-xs-12 text--center">
+
+        <a href="https://puxl.io/docs/v1-beta/" class="btn-icn-txt solid primary md" role="button">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19,0H5v32h22V8L19,0z M19,1.414L25.586,8H19V1.414z M26,31H6V1h12v7c0,0.552,0.447,1,1,1h7V31z"/>
+          </svg>
+          <span>Go to PUXL documentation (v1-beta)</span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <section id="soon" class="grid">
+
+      <h3 class="col-xs-12">Pronto...</h3>
+
+      <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+        <img class="circle" alt="" src="img/page__home/puxl-home__features--training.png">
+        <h4>Formación</h4>
+        <p>Te ayudamos a construir tu carrera, a reducir el tiempo de desarrollo y a aportar más valor a tus desarrollos web. Con nuestro plan de formación práctico basado en el uso de PUXL, serás capaz de desarrollar interfaces accesibles en muy poco tiempo.</p>
+        <div class="text--center">
+          <a class="btn solid primary md" href="https://puxl.io/formacion/" role="button">Saber más...</a>
+        </div>
+      </article>
+
+      <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+        <img class="circle" alt="" src="img/page__home/puxl-home__features--support.png">
+        <h4>Soporte</h4>
+        <p>Te proporcionamos acceso a nuestros expertos y a servicios de apoyo, que te ayudarán a crear las interfaces de cualquier proyecto web.
+        <br>
+        Nuestro enfoque es abierto y colaborativo. Te da acceso directo a nuestros especialistas, a las últimas actualizaciones sobre el producto y asesoramiento sobre las prácticas más recomendadas.</p>
+        <div class="text--center">
+          <a class="btn solid primary md" href="https://puxl.io/soporte/" role="button">Saber más...</a>
+        </div>
+      </article>
+
+      <article class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+        <img class="circle" alt="" src="img/page__home/puxl-home__features--themes.png">
+        <h4>Temas</h4>
+        <p>Nuestros temas están diseñados como una extensión de PUXL, y creados para necesidades específicas. Esto significa que PUXL se adapta a tu proyecto, agregando componentes, utilidades y complementos completamente nuevos.</p>
+        <div class="text--center">
+          <a class="btn solid primary md" href="https://puxl.io/temas/" role="button">Saber más...</a>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <footer role="contentinfo">
+
+    <div class="grid">
+
+      <div class="col-xs-12 col-sm-8">
+
+        <p>
+          <strong>PUXL framework <small>v1-beta</small></strong>.
+          <br>
+          <small>Created by <a href="https://github.com/mrkanuel" rel="external">@MrKanuel</a>. Brought by <a href="https://github.com/orgs/puxl/teams/puxl-clan" rel="external">The Puxl Clan</a>, with love from Basque Country.</small>
+          <br>
+          <small>Code licensed <a href="https://github.com/puxl/puxl-framework/blob/master/LICENSE">MIT</a>, docs <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</small>
+        </p>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-4 text--right">
+
+        <a class="btn-icn lg capsule" href="mailto:info@puxl.io" role="button">
+          <img alt="" src="https://puxl.io/img/puxl-icons/email-unread.svg" aria-hidden="true">
+          <span>Email contact</span>
+        </a>
+
+        <a class="btn-icn lg capsule" href="https://www.linkedin.com/company/puxl/" role="button">
+          <img alt="" src="https://puxl.io/img/logo/linkedin.svg" aria-hidden="true">
+          <span>Company on LinkedIn</span>
+        </a>
+
+        <a class="btn-icn lg capsule" href="https://www.reddit.com/user/puxl_io" role="button">
+          <img alt="" src="https://puxl.io/img/logo/reddit.svg" aria-hidden="true">
+          <span>Community on Reddit</span>
+        </a>
+
+        <a class="btn-icn lg capsule" href="https://github.com/puxl" role="button">
+          <img alt="" src="https://puxl.io/img/logo/github.svg" aria-hidden="true">
+          <span>Repository on GitHub</span>
+        </a>
+
+        <a class="btn-icn lg capsule" href="https://t.me/joinchat/AoC6ohKwoJDMIiqe_e01cA" role="button">
+          <img alt="" src="https://puxl.io/img/logo/telegram.svg" aria-hidden="true">
+          <span>Channel on Telegram</span>
+        </a>
+
+      </div>
+
+      <div class="col-xs-12 text--center">
+        <small><a href="https://puxl.io/aviso-legal/">Legal</a> · <a href="https://puxl.io/politica-de-privacidad/">Privacy</a></small>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+<!--  <script src="http://puxl.io/js/puxl-js/appBar.js"></script>-->
+  <script src="../puxl-framework/js/puxl-js/appBar.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      // If <html> tag contains class="no-js".
+      if (document.documentElement.classList.contains('no-js')) {
+        // Remove class="no-js" from <html>.
+        document.documentElement.classList.remove('no-js');
+        // Add class="js" to <html>.
+        document.documentElement.classList.add('js');
+      }
+
+      // Initialize app bar.
+      puxl_appBar(
+        // id
+        'app-bar',
+        // iconPath
+        'https://puxl.io/img/puxl-icons/',
+        // iconOpened
+        'cross.svg',
+        // iconClosed
+        'menu-burger.svg',
+        // txtOpened
+        'Close navigation menu',
+        // txtClosed
+        'Open navigation menu'
+      );
+    })();
+  </script>
+
+</body>
+</html>
