@@ -1,0 +1,337 @@
+@charset 'UTF-8';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+//    Puxl
+//
+//    Version:     1-beta
+//
+//    Author:      Iñigo Garcia (@MrKanuel)
+//
+//    Route:       puxl-framework/css/puxl-css/compound/_form.scss
+//
+//    Requires:    puxl-framework/css/puxl-css/theme/_puxl-light.scss
+//                 puxl-framework/css/puxl-css/_structure.scss
+//                 puxl-framework/css/puxl-css/mixin/_error-warning.scss
+//
+//    License:     The MIT License (MIT)
+//                 https://github.com/puxl/puxl-framework/blob/master/LICENSE
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+  form {
+    input,
+    select,
+    textarea {
+      &:not([name]) {
+        @include error-warning('This element must have a non-empty name="" attribute. Example: <element name="[ some NAME ]">');
+      }
+    }
+
+    &.classic {
+      display:    block;
+
+      p.ctrl {
+        min-width:    100%;
+      }
+
+      .ctrl {
+        margin-bottom:    $form--row-gap;
+        width:            100%;
+
+        &:last-child {
+          margin-bottom:    0;
+        }
+
+        &.chk {
+          display:    inline-block;
+
+          > input + span {
+            display:    block;
+          }
+        }
+
+        &.rng,
+        &.sel,
+        &.sel-mul,
+        &.txt,
+        &.txta {
+          display:    block;
+          height:     auto;
+
+          > span:first-of-type {
+            width:    calc(
+                          #{$form--classic__control__text--width}
+                        - #{$control__textfield--separation--h}
+                      );
+
+            [dir=ltr] & {
+              float:    left;
+            }
+
+            [dir=rtl] & {
+              float:    right;
+            }
+          }
+
+          small {
+            display:       block;
+            margin-top:    $control__textfield--separation--v;
+
+            [dir=ltr] & {
+              margin-left:    $form--classic__control__text--width;
+            }
+
+            [dir=rtl] & {
+              margin-right:    $form--classic__control__text--width;
+            }
+          }
+
+        }
+
+        &.sel,
+        &.txt,
+        &.txta {
+          > span:first-of-type {
+            margin-top:    .25em;
+          }
+        }
+
+        &.sel,
+        &.sel-mul {
+          select {
+            width:    calc(
+                          100%
+                        - #{$form--classic__control__text--width}
+                      );
+          }
+        }
+
+        &.rng,
+        &.txt {
+          input {
+            width:    calc(
+                          100%
+                        - #{$form--classic__control__text--width}
+                      );
+          }
+        }
+
+        &.txta {
+          textarea {
+            width:    calc(
+                          100%
+                        - #{$form--classic__control__text--width}
+                      );
+          }
+        }
+
+        &.rng {
+          small {
+            margin-top:    0;
+          }
+        }
+      }
+    }// form.classic
+
+    &.h {
+      display:    inline-block;
+
+      .ctrl {
+        margin-left:     $form--column-gap / 2;
+        margin-right:    $form--column-gap / 2;
+
+        [dir=ltr] & {
+          &:first-child {
+            margin-left:    0;
+          }
+
+          &:last-child {
+            margin-right:    0;
+          }
+        }
+
+        [dir=rtl] & {
+          &:first-child {
+            margin-right:    0;
+          }
+
+          &:last-child {
+            margin-left:    0;
+          }
+        }
+
+        &.chk {
+          vertical-align:    middle;
+        }
+      }
+    }// form.h
+
+    &.v {
+      display:    block;
+
+      p.ctrl {
+        min-width:    100%;
+      }
+
+      .ctrl {
+        margin-bottom:    $form--row-gap;
+        width:            100%;
+
+        &:last-child {
+          margin-bottom:    0;
+        }
+
+        &.chk {
+          display:    inline-block;
+
+          > input + span {
+            display:    block;
+          }
+        }
+
+        &.rng {
+          align-items:       stretch;
+          flex-direction:    column;
+
+          > span {
+            line-height:    var(--body--line-height);
+            margin:         0
+                            0
+                            $control__textfield--separation--v;
+
+            [dir=ltr] & {
+              margin-right:    0;
+            }
+
+            [dir=rtl] & {
+              margin-left:    0;
+            }
+          }
+
+          > input {
+            width:    100%;
+          }
+
+          > small {
+            margin:    $control__textfield--separation--v
+                       0
+                       0;
+
+            [dir=ltr] & {
+              margin-left:    0;
+            }
+
+            [dir=rtl] & {
+              margin-right:    0;
+            }
+          }
+        }
+
+        &.sel,
+        &.sel-mul {
+          align-items:       stretch;
+          flex-direction:    column;
+          height:            auto;
+
+          > span {
+            margin:    0
+                       0
+                       $control__textfield--separation--v;
+
+            [dir=ltr] & {
+              margin-right:    0;
+            }
+
+            [dir=rtl] & {
+              margin-left:    0;
+            }
+          }
+
+          > small {
+            margin:    $control__textfield--separation--v
+                       0
+                       0;
+
+            [dir=ltr] & {
+              margin-left:    0;
+            }
+
+            [dir=rtl] & {
+              margin-right:    0;
+            }
+          }
+        }
+
+        &.txt,
+        &.txta {
+          align-items:       stretch;
+          flex-direction:    column;
+          height:            auto;
+
+          > span {
+            margin:    0
+                       0
+                       $control__textfield--separation--v;
+
+            [dir=ltr] & {
+              margin-right:    0;
+            }
+
+            [dir=rtl] & {
+              margin-left:    0;
+            }
+          }
+
+          > small {
+            margin:    $control__textfield--separation--v
+                       0
+                       0;
+
+            [dir=ltr] & {
+              margin-left:    0;
+            }
+
+            [dir=rtl] & {
+              margin-right:    0;
+            }
+          }
+        }
+      }
+    }// form.v
+  }// form
+
+
+    fieldset {
+      border:{
+        color:     $fieldset--border-color;
+        radius:    var(--control__box--shape);
+        style:     $fieldset--border-style;
+        width:     $fieldset--border-width;
+      }
+      margin:      $fieldset--margin;
+      padding:     $fieldset--padding;
+
+      legend {
+        border:         $fieldset__legend--border;
+        height:         $fieldset__legend--height;
+        line-height:    $fieldset__legend--line-height;
+        margin:         $fieldset__legend--margin;
+        opacity:        $opacity--disabled;
+        padding:        $fieldset__legend--padding;
+      }// legend
+
+      &:disabled {
+        border-color:    transparentize($fieldset--border-color, $opacity--disabled);
+
+        legend {
+          opacity:        $opacity--disabled;
+        }
+      }
+
+      fieldset {
+        margin:     $fieldset--margin;
+        padding:    $fieldset--padding;
+      }// fieldset
+    }// fieldset
