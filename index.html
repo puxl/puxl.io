@@ -8,172 +8,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" ty pe="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#585858">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" ty pe="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#585858">
     <meta name="msapplication-config" content="browserconfig.xml">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/mstile-310x310.png">
+    <meta name="msapplication-TileImage" content="mstile-310x310.png">
     <!-- Quancast Coookies -->
     <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
-<script type="text/javascript" async=true>
-(function() {
-  var host = window.location.hostname;
-  var element = document.createElement('script');
-  var firstScript = document.getElementsByTagName('script')[0];
-  var url = 'https://quantcast.mgr.consensu.org'
-    .concat('/choice/', '_QhgY0Zqgydbk', '/', host, '/choice.js')
-  var uspTries = 0;
-  var uspTriesLimit = 3;
-  element.async = true;
-  element.type = 'text/javascript';
-  element.src = url;
+    <script type="text/javascript" async=true>
+        (function() {
+        var host = window.location.hostname;
+        var element = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', '_QhgY0Zqgydbk', '/', host, '/choice.js')
+        var uspTries = 0;
+        var uspTriesLimit = 3;
+        element.async = true;
+        element.type = 'text/javascript';
+        element.src = url;
 
-  firstScript.parentNode.insertBefore(element, firstScript);
+        firstScript.parentNode.insertBefore(element, firstScript);
 
-  function makeStub() {
-    var TCF_LOCATOR_NAME = '__tcfapiLocator';
-    var queue = [];
-    var win = window;
-    var cmpFrame;
+        function makeStub() {
+            var TCF_LOCATOR_NAME = '__tcfapiLocator';
+            var queue = [];
+            var win = window;
+            var cmpFrame;
 
-    function addFrame() {
-      var doc = win.document;
-      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+            function addFrame() {
+            var doc = win.document;
+            var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
 
-      if (!otherCMP) {
-        if (doc.body) {
-          var iframe = doc.createElement('iframe');
+            if (!otherCMP) {
+                if (doc.body) {
+                var iframe = doc.createElement('iframe');
 
-          iframe.style.cssText = 'display:none';
-          iframe.name = TCF_LOCATOR_NAME;
-          doc.body.appendChild(iframe);
-        } else {
-          setTimeout(addFrame, 5);
-        }
-      }
-      return !otherCMP;
-    }
+                iframe.style.cssText = 'display:none';
+                iframe.name = TCF_LOCATOR_NAME;
+                doc.body.appendChild(iframe);
+                } else {
+                setTimeout(addFrame, 5);
+                }
+            }
+            return !otherCMP;
+            }
 
-    function tcfAPIHandler() {
-      var gdprApplies;
-      var args = arguments;
+            function tcfAPIHandler() {
+            var gdprApplies;
+            var args = arguments;
 
-      if (!args.length) {
-        return queue;
-      } else if (args[0] === 'setGdprApplies') {
-        if (
-          args.length > 3 &&
-          args[2] === 2 &&
-          typeof args[3] === 'boolean'
-        ) {
-          gdprApplies = args[3];
-          if (typeof args[2] === 'function') {
-            args[2]('set', true);
-          }
-        }
-      } else if (args[0] === 'ping') {
-        var retr = {
-          gdprApplies: gdprApplies,
-          cmpLoaded: false,
-          cmpStatus: 'stub'
+            if (!args.length) {
+                return queue;
+            } else if (args[0] === 'setGdprApplies') {
+                if (
+                args.length > 3 &&
+                args[2] === 2 &&
+                typeof args[3] === 'boolean'
+                ) {
+                gdprApplies = args[3];
+                if (typeof args[2] === 'function') {
+                    args[2]('set', true);
+                }
+                }
+            } else if (args[0] === 'ping') {
+                var retr = {
+                gdprApplies: gdprApplies,
+                cmpLoaded: false,
+                cmpStatus: 'stub'
+                };
+
+                if (typeof args[2] === 'function') {
+                args[2](retr);
+                }
+            } else {
+                queue.push(args);
+            }
+            }
+
+            function postMessageEventHandler(event) {
+            var msgIsString = typeof event.data === 'string';
+            var json = {};
+
+            try {
+                if (msgIsString) {
+                json = JSON.parse(event.data);
+                } else {
+                json = event.data;
+                }
+            } catch (ignore) {}
+
+            var payload = json.__tcfapiCall;
+
+            if (payload) {
+                window.__tcfapi(
+                payload.command,
+                payload.version,
+                function(retValue, success) {
+                    var returnMsg = {
+                    __tcfapiReturn: {
+                        returnValue: retValue,
+                        success: success,
+                        callId: payload.callId
+                    }
+                    };
+                    if (msgIsString) {
+                    returnMsg = JSON.stringify(returnMsg);
+                    }
+                    event.source.postMessage(returnMsg, '*');
+                },
+                payload.parameter
+                );
+            }
+            }
+
+            while (win) {
+            try {
+                if (win.frames[TCF_LOCATOR_NAME]) {
+                cmpFrame = win;
+                break;
+                }
+            } catch (ignore) {}
+
+            if (win === window.top) {
+                break;
+            }
+            win = win.parent;
+            }
+            if (!cmpFrame) {
+            addFrame();
+            win.__tcfapi = tcfAPIHandler;
+            win.addEventListener('message', postMessageEventHandler, false);
+            }
         };
 
-        if (typeof args[2] === 'function') {
-          args[2](retr);
-        }
-      } else {
-        queue.push(args);
-      }
-    }
+        makeStub();
 
-    function postMessageEventHandler(event) {
-      var msgIsString = typeof event.data === 'string';
-      var json = {};
-
-      try {
-        if (msgIsString) {
-          json = JSON.parse(event.data);
-        } else {
-          json = event.data;
-        }
-      } catch (ignore) {}
-
-      var payload = json.__tcfapiCall;
-
-      if (payload) {
-        window.__tcfapi(
-          payload.command,
-          payload.version,
-          function(retValue, success) {
-            var returnMsg = {
-              __tcfapiReturn: {
-                returnValue: retValue,
-                success: success,
-                callId: payload.callId
-              }
-            };
-            if (msgIsString) {
-              returnMsg = JSON.stringify(returnMsg);
+        var uspStubFunction = function() {
+            var arg = arguments;
+            if (typeof window.__uspapi !== uspStubFunction) {
+            setTimeout(function() {
+                if (typeof window.__uspapi !== 'undefined') {
+                window.__uspapi.apply(window.__uspapi, arg);
+                }
+            }, 500);
             }
-            event.source.postMessage(returnMsg, '*');
-          },
-          payload.parameter
-        );
-      }
-    }
+        };
 
-    while (win) {
-      try {
-        if (win.frames[TCF_LOCATOR_NAME]) {
-          cmpFrame = win;
-          break;
+        var checkIfUspIsReady = function() {
+            uspTries++;
+            if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+            console.warn('USP is not accessible');
+            } else {
+            clearInterval(uspInterval);
+            }
+        };
+
+        if (typeof window.__uspapi === 'undefined') {
+            window.__uspapi = uspStubFunction;
+            var uspInterval = setInterval(checkIfUspIsReady, 6000);
         }
-      } catch (ignore) {}
-
-      if (win === window.top) {
-        break;
-      }
-      win = win.parent;
-    }
-    if (!cmpFrame) {
-      addFrame();
-      win.__tcfapi = tcfAPIHandler;
-      win.addEventListener('message', postMessageEventHandler, false);
-    }
-  };
-
-  makeStub();
-
-  var uspStubFunction = function() {
-    var arg = arguments;
-    if (typeof window.__uspapi !== uspStubFunction) {
-      setTimeout(function() {
-        if (typeof window.__uspapi !== 'undefined') {
-          window.__uspapi.apply(window.__uspapi, arg);
-        }
-      }, 500);
-    }
-  };
-
-  var checkIfUspIsReady = function() {
-    uspTries++;
-    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
-      console.warn('USP is not accessible');
-    } else {
-      clearInterval(uspInterval);
-    }
-  };
-
-  if (typeof window.__uspapi === 'undefined') {
-    window.__uspapi = uspStubFunction;
-    var uspInterval = setInterval(checkIfUspIsReady, 6000);
-  }
-})();
-</script>
-<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+        })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
     <!-- Google Analytics -->
     <script>
         window.ga = window.ga || function() {
@@ -445,10 +445,10 @@
 
                 <ul class="space--after">
                     <li>
-                        <a href="docs/v1-beta/index.html">Docs (v1-beta)</a>
+                        <a href="docs/v1-beta">Docs (v1-beta)</a>
                     </li>
                     <li>
-                        <a href="puxl-icons/index.html">PUXL icons</a>
+                        <a href="puxl-icons">PUXL icons</a>
                     </li>
                 </ul>
 
@@ -518,7 +518,7 @@
                 <h1>Build the Accessible Web with PUXL framewok.</h1>
 
                 <p>PUXL is a free and open-source and eco-friendly library to create front-end Web interfaces.
-                    <br>It helps you build accessible and responsive sites with lightweight HTML.</p>
+                <br>It helps you build accessible and responsive sites with lightweight HTML.</p>
 
                 <ul>
                     <li>Live accessibility errors detection: mark the elements that fail and include the solution ready to copy, paste and solve.</li>
@@ -526,7 +526,7 @@
                     <li>Simple and short class names to build Webs intuitively and with less HTML and <em>divitis</em>.</li>
                 </ul>
 
-                <a class="btn-icn-txt md ghost primary" href="docs/v1-beta/index.html">
+                <a class="btn-icn-txt md ghost primary" href="docs/v1-beta">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M19,0H5v32h22V8L19,0z M19,1.414L25.586,8H19V1.414z M26,31H6V1h12v7c0,0.552,0.447,1,1,1h7V31z"/>
                     </svg>
@@ -608,7 +608,7 @@
                 </header>
                 <div class="content">
                     <p>As you build your interfaces, it guides you and prevents common accessibility errors. It is fully customizable (including the appearance of <code>select</code> and <code>checkbox</code>) and perfect for heavily loaded HTML sites.
-                        <br>PUXL detects accessibility errors automatically and shows them in the browser, describing the error and providing a solution in a copy-paste-solve way.</p>
+                    <br>PUXL detects accessibility errors automatically and shows them in the browser, describing the error and providing a solution in a copy-paste-solve way.</p>
                 </div>
             </article>
 
@@ -618,7 +618,7 @@
                 </header>
                 <div class="content">
                     <p>Load the colors you want in the palette, compile and let PUXL handle the heavy work in colors for buttons, backgrounds, text, borders... all over your site.
-                        <br>Achieving an accessible color contrast will no longer be a problem thanks to the integrated color algorithms.</p>
+                    <br>Achieving an accessible color contrast will no longer be a problem thanks to the integrated color algorithms.</p>
                 </div>
             </article>
 
@@ -628,7 +628,7 @@
                 </header>
                 <div class="content">
                     <p>Class names use industry conventions so you can start using PUXL in no time. We have detached ourselves from the names of long classes and unnecessarily nested nodes that overpopulate HTML.
-                        <br>A simple and semantic structure improves search engine indexing and makes your SEO easier.</p>
+                    <br>A simple and semantic structure improves search engine indexing and makes your SEO easier.</p>
                 </div>
             </article>
 
@@ -638,7 +638,7 @@
                 </header>
                 <div class="content">
                     <p>PUXL elements are written with the minimum necessary code. Compounds that use JavaScript do not require external libraries to function.
-                        <br>You can compress your styles and SVG icons in a single CSS stylesheet, and avoid having to load an entire font.</p>
+                    <br>You can compress your styles and SVG icons in a single CSS stylesheet, and avoid having to load an entire font.</p>
                 </div>
             </article>
 
@@ -648,7 +648,7 @@
                 </header>
                 <div class="content">
                     <p>The less code your sites have, the lower the load for your servers and the lower their consumption. People can also navigate using less data.
-                        <br>Reduce the cost of data and electricity bills for the pocket and our Mother Earth.</p>
+                    <br>Reduce the cost of data and electricity bills for the pocket and our Mother Earth.</p>
                 </div>
             </article>
 
@@ -658,7 +658,7 @@
                 </header>
                 <div class="content">
                     <p>Dynamic layouts with calc(), CSS custom properties (or CSS variables, they get along really well with JavaScript!), flexbox, grid, animation and many others have come to stay.
-                        <br>We also wanted to include support for ltr/rtl and <a href="puxl-icons/index.html">PUXL icons</a>. We could not leave them out of the party.</p>
+                    <br>We also wanted to include support for ltr/rtl and <a href="puxl-icons">PUXL icons</a>. We could not leave them out of the party.</p>
                 </div>
             </article>
 
@@ -668,16 +668,15 @@
                 </header>
                 <div class="content">
                     <p>PUXL is written in SASS and pure JavaScript. Its modular architecture allows you to select just the code you need for your Webs, and not one more byte. Choose which elements and compounds to load with <code>_setup.scss</code> for your
-                        next project or create your own extensions.</p>
+                    next project or create your own extensions.</p>
                 </div>
             </article>
 
             <div class="col-xs-12 text--center">
-
-                <a href="docs/v1-beta/index.html" class="btn-icn-txt solid primary md">
+                <a href="docs/v1-beta" class="btn-icn-txt solid primary md">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M19,0H5v32h22V8L19,0z M19,1.414L25.586,8H19V1.414z M26,31H6V1h12v7c0,0.552,0.447,1,1,1h7V31z"/>
-          </svg>
+                        <path d="M19,0H5v32h22V8L19,0z M19,1.414L25.586,8H19V1.414z M26,31H6V1h12v7c0,0.552,0.447,1,1,1h7V31z"/>
+                    </svg>
                     <span>Go to PUXL documentation (v1-beta)</span>
                 </a>
 
@@ -712,15 +711,15 @@
             </figure>
 
             <div class="col-xs-12 text--center">
-<!--
-                <a class="btn-icn-txt md ghost secondary" href="download/WordPress-theme-Omnibus-Prime_v1-beta.zip">
+
+                <a class="btn-icn-txt md ghost secondary" href="https://github.com/puxl/WordPress-theme-Omnibus-Prime/archive/master.zip">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M15.292,31.707c0.391,0.391,1.024,0.391,1.415,0l6-6c0.391-0.391,0.391-1.023,0-1.414c-0.392-0.391-1.023-0.391-1.414,0L17,28.586V22c0-0.553-0.447-1-1-1c-0.552,0-1,0.447-1,1v6.586l-4.293-4.293c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414L15.292,31.707z"/>
                         <path d="M25,6l-0.25,0.006C23.863,2.552,20.73,0,17,0c-4.14,0-7.548,3.146-7.959,7.182C8.71,7.064,8.362,7,8,7c-1.657,0-3,1.343-3,3c-2.762,0-5,2.238-5,5c0,2.762,2.238,5,5,5h20c3.867,0,7-3.133,7-7C32,9.136,28.867,6,25,6z M25,19H5c-2.206,0-4-1.794-4-4s1.794-4,4-4c0.552,0,1-0.448,1-1c0-1.103,0.897-2,2-2c0.236,0,0.474,0.042,0.708,0.125c0.108,0.038,0.221,0.057,0.333,0.057c0.187,0,0.373-0.053,0.535-0.155c0.259-0.164,0.429-0.438,0.46-0.744C10.4,3.701,13.395,1,17,1c3.199,0,5.988,2.161,6.781,5.254c0.113,0.442,0.512,0.751,0.969,0.751L25,7c3.314,0,6,2.688,6,6C31,16.314,28.314,19,25,19z"/>
                     </svg>
                     <span>Omnibus Prime v1-beta (ZIP - 2.4MB)</span>
                 </a>
--->
+
                 <a class="btn-icn-txt md ghost secondary" href="https://github.com/puxl/WordPress-theme-Omnibus-Prime">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M15.292,31.707c0.391,0.391,1.024,0.391,1.415,0l6-6c0.391-0.391,0.391-1.023,0-1.414c-0.392-0.391-1.023-0.391-1.414,0L17,28.586V22c0-0.553-0.447-1-1-1c-0.552,0-1,0.447-1,1v6.586l-4.293-4.293c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414L15.292,31.707z"/>
@@ -806,11 +805,15 @@
                 </a>
 
             </div>
-<!--
+
             <div class="col-xs-12 text--center">
-                <small><a href="https://puxl.io/aviso-legal/">Legal</a> · <a href="https://puxl.io/politica-de-privacidad/">Privacy</a></small>
+                <small>
+                    <a href="legal/aviso-legal">Legal</a> · 
+                    <a href="legal/politica-de-privacidad">Privacy</a> · 
+                    <a href="legal/politica-de-cookies">Cookies</a>
+                </small>
             </div>
--->
+
         </div>
 
     </footer>
